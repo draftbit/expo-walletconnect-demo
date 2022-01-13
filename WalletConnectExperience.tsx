@@ -9,6 +9,14 @@ const shortenAddress = (address: string) => {
   )}`;
 };
 
+function Button({ onPress, label }: any) {
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.button}>
+      <Text style={styles.text}>{label}</Text>
+    </TouchableOpacity>
+  );
+}
+
 export default function WalletConnectExperience() {
   const connector = useWalletConnect();
 
@@ -22,17 +30,12 @@ export default function WalletConnectExperience() {
 
   return (
     <>
-      {!connector.connected && (
-        <TouchableOpacity onPress={connectWallet} style={styles.buttonStyle}>
-          <Text style={styles.buttonTextStyle}>Connect a Wallet</Text>
-        </TouchableOpacity>
-      )}
-      {!!connector.connected && (
+      {!connector.connected ? (
+        <Button onPress={connectWallet} label="Connect a wallet" />
+      ) : (
         <>
           <Text>{shortenAddress(connector.accounts[0])}</Text>
-          <TouchableOpacity onPress={killSession} style={styles.buttonStyle}>
-            <Text style={styles.buttonTextStyle}>Log out</Text>
-          </TouchableOpacity>
+          <Button onPress={killSession} label="Log out" />
         </>
       )}
     </>
@@ -40,23 +43,15 @@ export default function WalletConnectExperience() {
 }
 
 const styles = StyleSheet.create({
-  buttonStyle: {
-    backgroundColor: "#3399FF",
-    borderWidth: 0,
+  button: {
+    backgroundColor: "#5A45FF",
     color: "#FFFFFF",
-    borderColor: "#3399FF",
-    height: 40,
-    alignItems: "center",
-    borderRadius: 30,
-    marginLeft: 35,
-    marginRight: 35,
-    marginTop: 20,
-    marginBottom: 20,
+    borderRadius: 12,
+    paddingHorizontal: 16,
+    paddingVertical: 12,
   },
-  buttonTextStyle: {
+  text: {
     color: "#FFFFFF",
-    paddingVertical: 10,
-    paddingHorizontal: 15,
     fontSize: 16,
     fontWeight: "600",
   },
