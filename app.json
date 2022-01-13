@@ -2,6 +2,7 @@
   "expo": {
     "name": "WalletConnectExample",
     "slug": "WalletConnectExample",
+    "scheme": "walletconnect-example",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
