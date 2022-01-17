@@ -2933,6 +2933,23 @@ expo-constants@~13.0.0:
     "@expo/config" "^6.0.6"
     uuid "^3.3.2"
 
+expo-crypto-polyfills@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/expo-crypto-polyfills/-/expo-crypto-polyfills-1.1.0.tgz#cc6718d0657bd9ee4d40c661d4229fddd5cd399d"
+  integrity sha512-XJvEpE0bigov8uX139KXy1fwpBCKCnAO0k2xFSGoh+91QV46vs/Jy2M06kWv6GPKnXoaEz5OD4IbMjCYGScrbw==
+  dependencies:
+    base-64 "^1.0.0"
+    crypto-browserify "^3.12.0"
+    expo-file-system "~13.1.0"
+    https-browserify "^1.0.0"
+    os-browserify "^0.3.0"
+    path-browserify "^1.0.1"
+    react-native-get-random-values "^1.7.2"
+    react-native-tcp "^4.0.0"
+    readable-stream "^3.6.0"
+    stream-http "^3.2.0"
+    vm-browserify "^1.1.2"
+
 expo-error-recovery@~3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/expo-error-recovery/-/expo-error-recovery-3.0.4.tgz#de85c8c6b387d9b1e532256600882f2c2704383a"
